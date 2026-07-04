@@ -6,26 +6,46 @@
   <groupId>com.insurasphere</groupId>
   <artifactId>InsuraSpher</artifactId>
   <version>1.0.0</version>
+  <packaging>pom</packaging>
 
   <name>InsuraSpher</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
+  <modules>
+    <module>discover-server</module>
+    <module>api-gateway</module>
+    <module>user-service</module>
+    <module>policy-service</module>
+    <module>claim-service</module>
+    <module>payment-service</module>
+    <module>Notification-service</module>
+  </modules>
 
   <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.release>17</maven.compiler.release>
+    <java.version>17</java.version>
+    <spring.boot.version>3.5.3</spring.boot.version>
+    <spring.cloud.version>2025.0.0</spring.cloud.version>
   </properties>
 
   <dependencyManagement>
-    <dependencies>
-      <dependency>
-        <groupId>org.junit</groupId>
-        <artifactId>junit-bom</artifactId>
-        <version>5.11.0</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-    </dependencies>
+   <dependencies>
+     <dependency>
+       <groupId>org.springframework.boot</groupId>
+       <artifactId>spring-boot-dependencies</artifactId>
+       <version>${spring.boot.version}</version>
+       <type>pom</type>
+       <scope>import</scope>
+     </dependency>
+
+     <dependency>
+       <groupId>org.springframework.cloud</groupId>
+       <artifactId>spring-cloud-dependencies</artifactId>
+       <version>${spring.cloud.version}</version>
+       <type>pom</type>
+       <scope>import</scope>
+     </dependency>
+
+   </dependencies>
   </dependencyManagement>
 
   <dependencies>
